@@ -1,9 +1,9 @@
 package barcante.condominiummanager.domain.apartment;
 
-import barcante.condominiummanager.infraestructure.exception.BusinessException;
-import barcante.condominiummanager.infraestructure.repository.apartament.ApartmentRepository;
-import barcante.condominiummanager.infraestructure.repository.apartament.model.ApartmentEntity;
-import barcante.condominiummanager.infraestructure.repository.user.model.UserEntity;
+import barcante.condominiummanager.infra.exception.BusinessException;
+import barcante.condominiummanager.infra.repository.apartament.ApartmentRepository;
+import barcante.condominiummanager.infra.repository.apartament.model.ApartmentEntity;
+import barcante.condominiummanager.infra.repository.user.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

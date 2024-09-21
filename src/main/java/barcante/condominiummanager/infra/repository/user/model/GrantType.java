@@ -1,4 +1,4 @@
-package barcante.condominiummanager.infraestructure.repository.user.model;
+package barcante.condominiummanager.infra.repository.user.model;
 
 public enum GrantType {
 

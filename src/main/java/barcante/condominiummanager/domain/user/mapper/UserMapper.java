@@ -1,6 +1,6 @@
 package barcante.condominiummanager.domain.user.mapper;
 
-import barcante.condominiummanager.infraestructure.repository.user.model.UserEntity;
+import barcante.condominiummanager.infra.repository.user.model.UserEntity;
 import condominiummanager.model.UserRequest;
 import condominiummanager.model.UserResponse;
 import org.mapstruct.Mapper;

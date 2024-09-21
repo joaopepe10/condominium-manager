@@ -1,6 +1,6 @@
-package barcante.condominiummanager.infraestructure.repository.apartament;
+package barcante.condominiummanager.infra.repository.apartament;
 
-import barcante.condominiummanager.infraestructure.repository.apartament.model.ApartmentEntity;
+import barcante.condominiummanager.infra.repository.apartament.model.ApartmentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

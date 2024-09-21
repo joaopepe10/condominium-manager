@@ -1,7 +1,7 @@
-package barcante.condominiummanager.infraestructure.repository.user.model;
+package barcante.condominiummanager.infra.repository.user.model;
 
-import barcante.condominiummanager.infraestructure.repository.apartament.model.ApartmentEntity;
-import barcante.condominiummanager.infraestructure.repository.payment.PaymentEntity;
+import barcante.condominiummanager.infra.repository.apartament.model.ApartmentEntity;
+import barcante.condominiummanager.infra.repository.payment.PaymentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
