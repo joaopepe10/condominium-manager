@@ -72,3 +72,6 @@ components:
         phoneNumber:
           type: string
           example: (31) 9 0420-0420
+        apartmentNumber:
+          type: string
+          example: 7

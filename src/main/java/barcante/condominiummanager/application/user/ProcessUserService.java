@@ -2,6 +2,7 @@ package barcante.condominiummanager.application.user;
 
 import barcante.condominiummanager.domain.UserService;
 import condominiummanager.model.UserRequest;
+import condominiummanager.model.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class ProcessUserService {
         this.userService = userService;
     }
 
-    public void createUser(UserRequest request) {
-        userService.save(request);
+    public UserResponse createUser(UserRequest request) {
+        return userService.save(request);
     }
 }

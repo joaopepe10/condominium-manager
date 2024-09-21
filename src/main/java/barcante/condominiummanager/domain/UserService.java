@@ -5,6 +5,7 @@ import barcante.condominiummanager.domain.user.mapper.UserMapper;
 import barcante.condominiummanager.infraestructure.repository.user.UserRepository;
 import barcante.condominiummanager.infraestructure.repository.user.model.UserEntity;
 import condominiummanager.model.UserRequest;
+import condominiummanager.model.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +23,11 @@ public class UserService {
         this.apartmentService = apartmentService;
     }
 
-    public UserEntity save(UserRequest request){
+    public UserResponse save(UserRequest request){
         var apartment = apartmentService.findApartmentByNumber(request.getApartmentNumber());
         var entity = mapper.toEntity(request);
         entity.setApartment(apartment);
         apartmentService.setUser(entity);
-        return userRepository.save(entity);
+        return mapper.toResponse(userRepository.save(entity));
     }
 }

@@ -20,7 +20,7 @@ public class UserController implements UserApi {
 
     @Override
     public ResponseEntity<UserResponse> createUser(UserRequest userRequest) {
-        service.createUser(userRequest);
-        return UserApi.super.createUser(userRequest);
+        var response = service.createUser(userRequest);
+        return ResponseEntity.ok(response);
     }
 }
