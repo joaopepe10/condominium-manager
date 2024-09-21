@@ -28,7 +28,7 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public ResponseEntity<Void> userSendProofPost(MultipartFile fileProof) {
-        return UserApi.super.userSendProofPost(fileProof);
+    public ResponseEntity<Void> userSendProofApartmentNumberPost(String apartmentNumber, MultipartFile fileProof) {
+        return UserApi.super.userSendProofApartmentNumberPost(apartmentNumber, fileProof);
     }
 }
