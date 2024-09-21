@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import static jakarta.persistence.GenerationType.UUID;
 
-import static jakarta.persistence.GenerationType.IDENTITY;
+import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -18,8 +19,8 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = UUID)
+    private UUID id;
 
     private String name;
 
