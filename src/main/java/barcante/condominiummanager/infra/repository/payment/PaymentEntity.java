@@ -26,6 +26,10 @@ public class PaymentEntity {
 
     private Double amount;
 
+    @Lob
+    @Column(name = "proof_of_payment", columnDefinition = "BLOB")
+    private byte[] proofOfPayment;
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;

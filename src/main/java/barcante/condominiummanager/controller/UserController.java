@@ -7,6 +7,9 @@ import condominiummanager.model.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 public class UserController implements UserApi {
@@ -21,6 +24,11 @@ public class UserController implements UserApi {
     @Override
     public ResponseEntity<UserResponse> createUser(UserRequest userRequest) {
         var response = service.createUser(userRequest);
-        return ResponseEntity.ok(response);
+        return ok(response);
+    }
+
+    @Override
+    public ResponseEntity<Void> userSendProofPost(MultipartFile fileProof) {
+        return UserApi.super.userSendProofPost(fileProof);
     }
 }

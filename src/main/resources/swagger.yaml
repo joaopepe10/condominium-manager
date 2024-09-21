@@ -34,7 +34,33 @@ paths:
                 $ref: '#/components/schemas/UserResponse'
         '400':
           description: Bad request
-
+  /user/send-proof:
+    post:
+      summary: "Upload de comprovante de pagamento"
+#      parameters:parameters
+#        - name: "apartmentNumber"
+#          in: "path"
+#          required: true
+#          description: "Número do apartamento para o qual o comprovante será enviado"
+#          schema:
+#            type: string
+      requestBody:
+        required: true
+        content:
+            multipart/form-data: # Media type
+              schema:            # Request payload
+                type: object
+                properties:      # Request parts
+                  fileProof:  # Part 3 (an image)
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: "Comprovante enviado com sucesso!"
+        '204':
+          description: "Comprovante enviado com sucesso!"
+        '500':
+          description: "Erro ao enviar o comprovante"
 components:
   schemas:
     UserRequest:
@@ -75,3 +101,9 @@ components:
         apartmentNumber:
           type: string
           example: 7
+    PaymentDetails:
+      type: object
+      properties:
+        proofOfPayment:
+          type: string
+          example:
