@@ -1,33 +1,65 @@
-HELP.md
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+.idea/*
+.idea/**
+
+# Exclude IntelliJ project-specific files
+out/
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+*.class
+*.log
+*.jar
+*.war
+*.ear
 
-### STS ###
-.apt_generated
+# Maven specific files
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+**/mvnw
+**/mvnw.cmd
+**/.mvn
+
+# Gradle specific files
+.gradle/
+build/
+**/gradlew
+**/gradlew.bat
+**/gradle-wrapper.jar
+**/gradle-wrapper.properties
+
+# Spring Boot specific files
+spring.log
+*.springBeans
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignore classpath and module files
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
 
-### IntelliJ IDEA ###
-.idea
+# Ignore compiled bytecode
+*.class
+
+# Ignore packaged files
+*.jar
+*.war
+*.ear
+
+# Generated files
+generated/
+
+# Ignore IDE configs
+*.ipr
 *.iws
 *.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
+.idea/
