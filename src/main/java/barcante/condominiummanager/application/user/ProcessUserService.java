@@ -1,6 +1,6 @@
 package barcante.condominiummanager.application.user;
 
-import barcante.condominiummanager.domain.UserService;
+import barcante.condominiummanager.domain.user.UserService;
 import condominiummanager.model.UserRequest;
 import condominiummanager.model.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;

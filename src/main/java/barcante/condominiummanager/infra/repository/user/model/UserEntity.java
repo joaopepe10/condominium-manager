@@ -1,15 +1,16 @@
 package barcante.condominiummanager.infraestructure.repository.user.model;
 
 import barcante.condominiummanager.infraestructure.repository.apartament.model.ApartmentEntity;
+import barcante.condominiummanager.infraestructure.repository.payment.PaymentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static jakarta.persistence.GenerationType.UUID;
-
-import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
+
+import static jakarta.persistence.GenerationType.UUID;
 
 @Entity
 @Data
@@ -24,11 +25,17 @@ public class UserEntity {
 
     private String name;
 
+    @Column(unique = true)
     private String email;
 
+    @Column(unique = true)
     private String phoneNumber;
 
-    private LocalDate paymentDate;
+    @Enumerated(EnumType.STRING)
+    private GrantType grantType;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<PaymentEntity> payments;
 
     @OneToOne(mappedBy = "user")
     private ApartmentEntity apartment;

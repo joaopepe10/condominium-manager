@@ -1,9 +1,8 @@
-package barcante.condominiummanager.domain;
+package barcante.condominiummanager.domain.user;
 
 import barcante.condominiummanager.domain.apartment.ApartmentService;
 import barcante.condominiummanager.domain.user.mapper.UserMapper;
 import barcante.condominiummanager.infraestructure.repository.user.UserRepository;
-import barcante.condominiummanager.infraestructure.repository.user.model.UserEntity;
 import condominiummanager.model.UserRequest;
 import condominiummanager.model.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
