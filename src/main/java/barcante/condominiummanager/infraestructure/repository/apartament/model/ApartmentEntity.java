@@ -6,9 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-
 import static jakarta.persistence.GenerationType.UUID;
+
+import java.util.UUID;
 
 @Entity
 @Data
@@ -19,11 +19,14 @@ public class ApartmentEntity {
 
     @Id
     @GeneratedValue(strategy = UUID)
-    private java.util.UUID id;
+    private UUID id;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
+
+    @Column(unique = true, nullable = false)
+    private String apartmentNumber;
 
     private String description;
 }
