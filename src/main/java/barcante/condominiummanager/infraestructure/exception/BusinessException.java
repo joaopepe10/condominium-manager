@@ -1,10 +1,10 @@
 package barcante.condominiummanager.infraestructure.exception;
 
+import static barcante.condominiummanager.core.constants.MessageErrorConstants.MESSAGE_ERROR_BUSINESS;
+
 public class BusinessException extends RuntimeException {
 
-    private static final String message = "Apartamento inexistente";
-
     public BusinessException() {
-        super(message);
+        super(MESSAGE_ERROR_BUSINESS);
     }
 }
