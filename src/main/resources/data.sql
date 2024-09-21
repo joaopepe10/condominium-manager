@@ -1,0 +1,12 @@
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '1', 'Description for Apartment 1', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '2', 'Description for Apartment 2', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '3', 'Description for Apartment 3', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '4', 'Description for Apartment 4', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '5', 'Description for Apartment 5', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '6', 'Description for Apartment 6', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '7', 'Description for Apartment 7', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '8', 'Description for Apartment 8', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '9', 'Description for Apartment 9', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '10', 'Description for Apartment 10', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '11', 'Description for Apartment 11', NULL);
+INSERT INTO tb_apartment (id, apartment_number, description, user_id) VALUES (UUID(), '12', 'Description for Apartment 12', NULL);
