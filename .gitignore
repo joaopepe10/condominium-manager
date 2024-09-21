@@ -5,6 +5,7 @@
 .idea/*
 .idea/**
 
+HELP.md
 # Exclude IntelliJ project-specific files
 out/
 target/
