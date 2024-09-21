@@ -43,6 +43,7 @@ components:
         - name
         - email
         - phoneNumber
+        - apartmentNumber
       properties:
         name:
           type: string
@@ -53,6 +54,9 @@ components:
         phoneNumber:
           type: string
           example: (31) 9 0420-0420
+        apartmentNumber:
+          type: string
+          example: 7
     UserResponse:
       type: object
       properties:

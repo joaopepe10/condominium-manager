@@ -15,8 +15,7 @@ public class ProcessUserService {
         this.userService = userService;
     }
 
-    public void createUser(UserRequest userRequest) {
-        System.out.println(userRequest);
-        userService.save();
+    public void createUser(UserRequest request) {
+        userService.save(request);
     }
 }

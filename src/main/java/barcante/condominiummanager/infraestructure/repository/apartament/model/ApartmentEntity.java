@@ -25,6 +25,7 @@ public class ApartmentEntity {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
 
+
     @Column(unique = true, nullable = false)
     private String apartmentNumber;
 
