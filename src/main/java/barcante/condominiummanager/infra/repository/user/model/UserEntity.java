@@ -2,10 +2,10 @@ package barcante.condominiummanager.infra.repository.user.model;
 
 import barcante.condominiummanager.infra.repository.apartament.model.ApartmentEntity;
 import barcante.condominiummanager.infra.repository.payment.PaymentEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +13,9 @@ import java.util.UUID;
 import static jakarta.persistence.GenerationType.UUID;
 
 @Entity
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_users")
@@ -37,6 +39,7 @@ public class UserEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<PaymentEntity> payments;
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "user")
     private ApartmentEntity apartment;
 }

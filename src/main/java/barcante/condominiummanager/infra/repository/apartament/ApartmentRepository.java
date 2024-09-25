@@ -11,4 +11,6 @@ import java.util.UUID;
 public interface ApartmentRepository extends JpaRepository<ApartmentEntity, UUID> {
 
     Optional<ApartmentEntity> findByApartmentNumber(String apartmentNumber);
+
+    boolean existsByApartmentNumber(String apartmentNumber);
 }

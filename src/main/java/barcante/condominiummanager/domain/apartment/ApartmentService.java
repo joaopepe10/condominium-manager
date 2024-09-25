@@ -4,21 +4,21 @@ import barcante.condominiummanager.infra.exception.BusinessException;
 import barcante.condominiummanager.infra.repository.apartament.ApartmentRepository;
 import barcante.condominiummanager.infra.repository.apartament.model.ApartmentEntity;
 import barcante.condominiummanager.infra.repository.user.model.UserEntity;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ApartmentService {
 
     private final ApartmentRepository repository;
 
-    @Autowired
-    public ApartmentService(ApartmentRepository apartmentRepository) {
-        this.repository = apartmentRepository;
-    }
-
     public ApartmentEntity findApartmentByNumber(String apartmentNumber) {
         return findByApartmentNumber(apartmentNumber);
+    }
+
+    public boolean existsApartmentByNumber(String apartmentNumber) {
+        return repository.existsByApartmentNumber(apartmentNumber);
     }
 
     public void setUser(UserEntity user){
@@ -30,4 +30,6 @@ public class ApartmentService {
         return repository.findByApartmentNumber(number)
                 .orElseThrow(BusinessException::new);
     }
+
+
 }
