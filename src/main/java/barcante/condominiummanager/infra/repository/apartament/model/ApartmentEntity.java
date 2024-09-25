@@ -24,8 +24,6 @@ public class ApartmentEntity {
     @GeneratedValue(strategy = UUID)
     private UUID id;
 
-    @JsonBackReference
-    @JsonIgnoreProperties
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity user;
