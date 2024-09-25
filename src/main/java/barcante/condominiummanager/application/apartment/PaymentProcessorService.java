@@ -17,11 +17,11 @@ public class PaymentProcessorService {
     private final ApartmentService apartmentService;
     private final PaymentService paymentService;
 
-    public void processPayment(String apartmentNumber, MultipartFile fileProof){
+    public void processPayment(String apartmentNumber, MultipartFile fileProof, String description){
         try {
             if (nonNull(apartmentNumber) && nonNull(fileProof) && apartmentService.existsApartmentByNumber(apartmentNumber)) {
                 var apartment = apartmentService.findApartmentByNumber(apartmentNumber);
-                paymentService.pay(apartment, fileProof);
+                paymentService.pay(apartment, fileProof, description);
             }
         } catch (Exception e) {
             log.error("Error: {} .", e.getMessage());

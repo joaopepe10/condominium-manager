@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
@@ -18,8 +16,8 @@ public class ApartmentController implements ApartmentApi {
     private final PaymentProcessorService paymentProcessorService;
 
     @Override
-    public ResponseEntity<Void> sendProofPayment(String apartmentNumber, MultipartFile fileProof) {
-        paymentProcessorService.processPayment(apartmentNumber, fileProof);
+    public ResponseEntity<Void> sendProofPayment(String apartmentNumber, MultipartFile fileProof, String description) {
+        paymentProcessorService.processPayment(apartmentNumber, fileProof, description);
         return ok().build();
     }
 }

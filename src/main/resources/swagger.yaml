@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Condominium management
-  description: |
+  description: Basic CRUD operations for persist data about the condominium management
   version: 1.0.0
 servers:
   - url: http://localhost:8080
@@ -54,6 +54,9 @@ paths:
                   fileProof:
                     type: string
                     format: binary
+                  description:
+                    type: string
+
       responses:
         '200':
           description: "Comprovante enviado com sucesso!"
@@ -101,9 +104,3 @@ components:
         apartmentNumber:
           type: string
           example: 7
-    PaymentDetails:
-      type: object
-      properties:
-        proofOfPayment:
-          type: string
-          example:

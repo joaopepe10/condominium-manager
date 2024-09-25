@@ -26,6 +26,8 @@ public class PaymentEntity {
 
     private LocalDate paymentDate;
 
+    private String description;
+
     @Enumerated(EnumType.STRING)
     private MonthReference referenceMonth;
 
