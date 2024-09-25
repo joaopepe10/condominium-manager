@@ -6,5 +6,6 @@ import lombok.experimental.UtilityClass;
 public class MessageErrorConstants {
 
     public static final String MESSAGE_ERROR_BUSINESS = "Apartamento inexistente";
+    public static final String MESSAGE_ERROR_PROCESS_PAYMENT = "Houve algum erro ao processar o pagamento";
     public static final String MESSAGE_ERROR_DEFAULT = "Já já o Wanderleco vem ai, deixe as meninas longe daqui enquanto ele estiver aqui!";
 }

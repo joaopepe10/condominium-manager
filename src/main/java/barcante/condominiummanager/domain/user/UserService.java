@@ -37,4 +37,8 @@ public class UserService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new  IllegalArgumentException("User not found"));
     }
+
+    public void update(UserEntity user) {
+        userRepository.save(user);
+    }
 }

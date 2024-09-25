@@ -24,15 +24,17 @@ public class PaymentEntity {
     @GeneratedValue(strategy = UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private LocalDate paymentDate;
 
+    @Column(nullable = false)
     private String description;
 
     @Enumerated(EnumType.STRING)
     private MonthReference referenceMonth;
 
     @Lob
-    @Column(name = "proof_of_payment", columnDefinition = "BLOB")
+    @Column(columnDefinition = "BLOB", nullable = false)
     private byte[] proofOfPayment;
 
     @ManyToOne
@@ -40,6 +42,7 @@ public class PaymentEntity {
     private UserEntity user;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private PaymentStatus status = PaymentStatus.PENDING;
 
 

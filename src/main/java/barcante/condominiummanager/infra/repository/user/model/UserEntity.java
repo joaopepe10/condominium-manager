@@ -2,10 +2,22 @@ package barcante.condominiummanager.infra.repository.user.model;
 
 import barcante.condominiummanager.infra.repository.apartament.model.ApartmentEntity;
 import barcante.condominiummanager.infra.repository.payment.PaymentEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.UUID;
@@ -18,6 +30,7 @@ import static jakarta.persistence.GenerationType.UUID;
 @EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "tb_users")
 public class UserEntity {
 
@@ -36,7 +49,7 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private GrantType grantType;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private List<PaymentEntity> payments;
 
     @JsonManagedReference
