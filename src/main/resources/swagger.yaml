@@ -9,7 +9,7 @@ tags:
   - name: Condominium management
     description: Basic CRUD operations for persist data about the condominium management
 paths:
-  /user:
+  /users:
     post:
       tags:
         - user
@@ -24,14 +24,14 @@ paths:
               $ref: '#/components/schemas/UserRequest'
       responses:
         '200':
-          description: Successful operation
+          description: New resident added successfully
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserResponse'
         '400':
           description: Bad request
-  /apartment/send-proof/{apartmentNumber}:
+  /apartments/send-proof/{apartmentNumber}:
     post:
       summary: "Upload de comprovante de pagamento"
       parameters:
@@ -59,11 +59,45 @@ paths:
 
       responses:
         '200':
-          description: "Comprovante enviado com sucesso!"
+          description: Proof sent successfully!
         '204':
-          description: "Comprovante enviado com sucesso!"
+          description: Proof sent successfully!
         '500':
-          description: "Erro ao enviar o comprovante"
+          description: Error sending the receipt
+  /budgets:
+    post:
+      tags:
+        - budget
+      summary: New budget
+      description: Offering new budgets
+      operationId: createBudget
+      requestBody:
+        description: Budget to be approve
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BudgetRequest'
+      responses:
+        '204':
+          description: Budget proposal created successfully
+        '400':
+          description: Error when trying to create a new quote
+    get:
+      tags:
+        - get all budgets
+      summary: Find all budgets
+      description: Search all budgets proposals
+      operationId: findAll
+      responses:
+        '200':
+          description: Search successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BudgetsResponse'
+
 components:
   schemas:
     UserRequest:
@@ -104,3 +138,37 @@ components:
         apartmentNumber:
           type: string
           example: 7
+    BudgetRequest:
+      type: object
+      required:
+        - description
+        - value
+      properties:
+        description:
+          type: string
+          example: Pintar fachada do prédio
+        value:
+          type: number
+          example: 2500.00
+
+    BudgetsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: f0822b54-0720-11ee-be56-0242ac120002
+        descprition:
+          type: string
+          example: Pintar fachada do prédio.
+        value:
+          type: number
+          example: 2500.00
+        approved:
+          type: boolean
+          example: true/false
+        createdAt:
+          type: string
+          format: date
+        updatedAt:
+          type: string
+          format: date

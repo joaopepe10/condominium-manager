@@ -1,7 +1,7 @@
 package barcante.condominiummanager.controller;
 
 import barcante.condominiummanager.application.user.ProcessUserService;
-import condominiummanager.controller.UserApi;
+import condominiummanager.controller.UsersApi;
 import condominiummanager.model.UserRequest;
 import condominiummanager.model.UserResponse;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 @RequiredArgsConstructor
-public class UserController implements UserApi {
+public class UserController implements UsersApi {
 
     private final ProcessUserService service;
 
