@@ -31,6 +31,28 @@ paths:
                 $ref: '#/components/schemas/UserResponse'
         '400':
           description: Bad request
+  /login:
+    post:
+      tags:
+        - login
+      summary: Login user
+      description: Login with username and password
+      operationId: login
+      requestBody:
+        description: Login of the user
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: New resident added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        '400':
+          description: Bad request
   /apartments/send-proof/{apartmentNumber}:
     post:
       summary: "Upload de comprovante de pagamento"
@@ -100,14 +122,37 @@ paths:
 
 components:
   schemas:
+    ErrorMessage:
+      type: string
+
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          example: JoaoPepe22
+        password:
+          type: string
+          example: 123456
     UserRequest:
       type: object
       required:
+        - username
+        - password
         - name
         - email
         - phoneNumber
         - apartmentNumber
       properties:
+        username:
+          type: string
+          example: JoaoPepe22
+        password:
+          type: string
+          example: 123456
         name:
           type: string
           example: Germano

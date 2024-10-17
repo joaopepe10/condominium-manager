@@ -1,6 +1,6 @@
 package barcante.condominiummanager.controller;
 
-import barcante.condominiummanager.application.user.budget.BudgetService;
+import barcante.condominiummanager.application.budget.BudgetService;
 import condominiummanager.controller.BudgetsApi;
 import condominiummanager.model.BudgetRequest;
 import condominiummanager.model.BudgetsResponse;

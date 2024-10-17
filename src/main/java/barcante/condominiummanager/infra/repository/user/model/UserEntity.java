@@ -40,6 +40,10 @@ public class UserEntity {
 
     private String name;
 
+    private String username;
+
+    private String password;
+
     @Column(unique = true)
     private String email;
 

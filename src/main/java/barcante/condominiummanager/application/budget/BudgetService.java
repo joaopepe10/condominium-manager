@@ -1,4 +1,4 @@
-package barcante.condominiummanager.application.user.budget;
+package barcante.condominiummanager.application.budget;
 
 import barcante.condominiummanager.domain.budget.BudgetProposalService;
 import condominiummanager.model.BudgetRequest;

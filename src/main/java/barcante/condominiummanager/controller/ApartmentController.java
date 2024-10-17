@@ -3,7 +3,7 @@ package barcante.condominiummanager.controller;
 import barcante.condominiummanager.application.apartment.PaymentProcessorService;
 import condominiummanager.controller.ApartmentsApi;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -9,6 +9,7 @@ import condominiummanager.model.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -36,6 +37,10 @@ public class UserService {
     public UserEntity findById(UUID id){
         return userRepository.findById(id)
                 .orElseThrow(() -> new  IllegalArgumentException("User not found"));
+    }
+
+    public Optional<UserEntity> searchByUsarname(String username){
+        return userRepository.findByUsername(username);
     }
 
     public void update(UserEntity user) {
