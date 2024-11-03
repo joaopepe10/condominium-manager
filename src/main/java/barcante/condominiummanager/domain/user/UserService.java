@@ -6,25 +6,19 @@ import barcante.condominiummanager.infra.repository.user.UserRepository;
 import barcante.condominiummanager.infra.repository.user.model.UserEntity;
 import condominiummanager.model.UserRequest;
 import condominiummanager.model.UserResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
     private final UserMapper mapper;
     private final ApartmentService apartmentService;
-
-    @Autowired
-    public UserService(UserRepository userRepository, UserMapper userMapper, ApartmentService apartmentService) {
-        this.userRepository = userRepository;
-        this.mapper = userMapper;
-        this.apartmentService = apartmentService;
-    }
 
     public UserResponse save(UserRequest request){
         var apartment = apartmentService.findApartmentByNumber(request.getApartmentNumber());
