@@ -24,6 +24,9 @@ public class ProcessUserService {
         var entity =  userService.searchByUsarname(loginRequest.getUsername())
                 .orElseThrow(UserNotFoundException::new);
 
-        return userMapper.toResponse(entity);
+        if (entity.getPassword().equals(loginRequest.getPassword())) {
+            return userMapper.toResponse(entity);
+        }
+        throw new UserNotFoundException();
     }
 }
