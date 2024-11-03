@@ -20,11 +20,12 @@ jobs:
 
       - name: Fazendo build do projeto
         run: mvn clean install && ls
-      
+      - name: Package do projeto
+        run: mvn package
       - name: Copiando JAR para EC2
         uses: appleboy/scp-action@master
         with:
-          host: ec2-44-222-140-11.compute-1.amazonaws.com
+          host: ec2-54-237-168-230.compute-1.amazonaws.com
           username: ec2-user
           key: ${{ secrets.SSH_JP_PC_EC2 }}
           port: 22
